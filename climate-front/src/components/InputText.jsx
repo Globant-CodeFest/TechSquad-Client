@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import { FormControl, Box } from '@mui/material';
 
 const InputText = ({ onSubmit }) => {
   const [text, setText] = useState('');
