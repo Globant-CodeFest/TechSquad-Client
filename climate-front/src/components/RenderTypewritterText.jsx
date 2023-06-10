@@ -34,7 +34,7 @@ const RenderTypewriterText = ({ text }) => {
       }
       i++;
       speechBubbleRef.current.parentNode.scrollTop = speechBubbleRef.current.parentNode.scrollHeight;
-    }, 50);
+    }, 20);
 
     return () => {
       clearInterval(interval);

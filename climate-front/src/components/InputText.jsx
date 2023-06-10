@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import CircularProgress from '@mui/material/CircularProgress';
 import { FormControl, Box } from '@mui/material';
 
-const InputText = ({ onSubmit }) => {
+const InputText = ({ onSubmit, loading }) => {
   const [text, setText] = useState('');
 
   const handleChange = (e) => {
@@ -29,9 +30,11 @@ const InputText = ({ onSubmit }) => {
         }}
         value={text}
         onChange={handleChange}
-        label="Enter your message..."
+        label={loading ? "Cargando respuesta" : "Ingresa tu consulta..."}
+        InputLabelProps={{shrink: text ? true : false, style: { color: 'white' } }}
         variant="outlined"
         fullWidth
+        disabled={loading}
         InputProps={{
           style: { color: 'white' },
         }} 
@@ -43,8 +46,13 @@ const InputText = ({ onSubmit }) => {
         type="submit"
         variant="outlined"
         color="primary"
+        disabled={loading}
         disableElevation>
-        <SendIcon />
+        {loading ? (
+          <CircularProgress size={24} style={{position: 'absolute'}} />
+        ) : (
+          <SendIcon />
+        )}
       </Button>
     </form>
   );

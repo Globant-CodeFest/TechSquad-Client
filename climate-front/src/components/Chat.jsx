@@ -4,9 +4,11 @@ import Cards from './Cards';
 
 const Chat = () => {
   const [messages, setMessages] = useState([{ content: 'Hola, soy un bot', timestamp: new Date().toLocaleTimeString(), type: 'Initial'}]);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async (message) => {
     try {
+      setLoading(true);
       const response = await fetch('http://10.21.40.115:3000/v1/query', {
         method: 'POST',
         headers: {
@@ -15,6 +17,7 @@ const Chat = () => {
         // Si necesitas enviar algún dato en el cuerpo de la solicitud, puedes hacerlo de esta manera:
         body: JSON.stringify({ query: message }),
       });
+      setLoading(false);
   
       if (!response.ok) {
         throw new Error('Error en la solicitud');
@@ -57,7 +60,7 @@ const Chat = () => {
   return (
     <div className="chat" style={{ height: '100%', width: '60%', display:'flex', justifyContent: 'space-between', flexDirection:'column', marginBottom: '32px'}}>
       <Cards messages={messages} />
-      <InputText onSubmit={handleMessageSubmit} />
+      <InputText onSubmit={handleMessageSubmit} loading={loading}/>
     </div>
   );
 };
