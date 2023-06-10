@@ -14,14 +14,12 @@ import {
 export default function ActionAreaCard({ type, message }) {
   const avatar = type === "Answer" ? "A" : "Q";
   const [image, setImage] = React.useState("");
-  const [title, setTitle] = React.useState("PRUEBA");
-  const [info, setInfo] = React.useState("");
 
   return (
     <Card
       sx={{
         maxWidth: 900,
-        background: "#20232B",
+        background: type === "Question" ? "#20232B" : "#20082B",
         m: 5,
         border: 0.5,
         borderColor: "#B785F3",
@@ -29,7 +27,6 @@ export default function ActionAreaCard({ type, message }) {
     >
       <CardActionArea>
         <CardHeader
-          title={`${title}`}
           avatar={
             <Avatar
               sx={[
@@ -53,9 +50,18 @@ export default function ActionAreaCard({ type, message }) {
             color="text.secondary"
             style={{ color: "white" }}
           >
-            {
-              message ? type === 'Question' ? message : <RenderTypewriterText text={message} /> : <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading" />
-            }
+            {message ? (
+              type === "Question" ? (
+                message
+              ) : (
+                <RenderTypewriterText text={message} />
+              )
+            ) : (
+              <img
+                src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+                alt="loading"
+              />
+            )}
           </Typography>
         </CardContent>
       </CardActionArea>
