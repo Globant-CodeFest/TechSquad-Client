@@ -3,8 +3,8 @@ import InputText from './InputText';
 import Cards from './Cards';
 
 const Chat = () => {
-  const [messages, setMessages] = useState([{ content: 'Hola, soy un bot', timestamp: new Date().toLocaleTimeString(), type: 'Initial'}]);
   const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState([{ content: 'Bienvenido a SafeTravel. Te ayudare a encontrar informacion sobre desastres naturales. Puedes realizar tu consulta en lenguaje natural.', timestamp: new Date().toLocaleTimeString(), type: 'Initial'}]);
 
   const fetchData = async (message) => {
     try {
