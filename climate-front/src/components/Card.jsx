@@ -1,4 +1,5 @@
 import * as React from "react";
+import RenderTypewriterText from "./RenderTypewritterText";
 import {
   Avatar,
   CardActionArea,
@@ -10,7 +11,7 @@ import {
   IconButton,
 } from "@mui/material";
 
-export default function ActionAreaCard({ type }) {
+export default function ActionAreaCard({ type, message }) {
   const avatar = type === "Answer" ? "A" : "Q";
   const [image, setImage] = React.useState("");
   const [title, setTitle] = React.useState("PRUEBA");
@@ -52,8 +53,9 @@ export default function ActionAreaCard({ type }) {
             color="text.secondary"
             style={{ color: "white" }}
           >
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {
+              message ? type === 'Question' ? message : <RenderTypewriterText text={message} /> : "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+            }
           </Typography>
         </CardContent>
       </CardActionArea>

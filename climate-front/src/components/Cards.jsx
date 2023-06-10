@@ -4,14 +4,14 @@ import ActionAreaCard from "./Card";
 const Cards = ({ messages }) => {
   return (
     <div>
-      {/* {messages.map((message, index) => (
-        <Card
+        <ActionAreaCard />
+      {messages.map((message, index) => (
+        <ActionAreaCard
           key={index}
           message={message.content}
-          author={message.author}
+          type={message.type}
         />
-      ))} */}
-      <ActionAreaCard />
+      ))}  
     </div>
   );
 };

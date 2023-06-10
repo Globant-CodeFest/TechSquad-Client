@@ -31,6 +31,9 @@ const InputText = ({ onSubmit }) => {
         label="Enter your message..."
         variant="outlined"
         fullWidth
+        InputProps={{
+          style: { color: 'white' },
+        }} 
       />
       <Button style={{
         minWidth: 'auto',
