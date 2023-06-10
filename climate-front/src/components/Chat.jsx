@@ -3,7 +3,7 @@ import InputText from './InputText';
 import Cards from './Cards';
 
 const Chat = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([{ content: 'Hola, soy un bot', timestamp: new Date().toLocaleTimeString(), type: 'Initial'}]);
 
   const fetchData = async (message) => {
     try {
@@ -55,7 +55,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat" style={{ height: '100%', display:'flex', justifyContent: 'space-between', flexDirection:'column', marginBottom: '32px'}}>
+    <div className="chat" style={{ height: '100%', width: '60%', display:'flex', justifyContent: 'space-between', flexDirection:'column', marginBottom: '32px'}}>
       <Cards messages={messages} />
       <InputText onSubmit={handleMessageSubmit} />
     </div>

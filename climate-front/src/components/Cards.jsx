@@ -4,7 +4,6 @@ import ActionAreaCard from "./Card";
 const Cards = ({ messages }) => {
   return (
     <div>
-        <ActionAreaCard />
       {messages.map((message, index) => (
         <ActionAreaCard
           key={index}

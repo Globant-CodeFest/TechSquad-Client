@@ -54,7 +54,7 @@ export default function ActionAreaCard({ type, message }) {
             style={{ color: "white" }}
           >
             {
-              message ? type === 'Question' ? message : <RenderTypewriterText text={message} /> : "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+              message ? type === 'Question' ? message : <RenderTypewriterText text={message} /> : <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading" />
             }
           </Typography>
         </CardContent>
