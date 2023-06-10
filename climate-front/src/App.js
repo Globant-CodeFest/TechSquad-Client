@@ -13,6 +13,3 @@ function App() {
 
 export default App;
 
-//Contexto
-//Solucion
-//Problematica
