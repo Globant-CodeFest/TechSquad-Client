@@ -49,7 +49,7 @@ const InputText = ({ onSubmit, loading }) => {
         disabled={loading}
         disableElevation>
         {loading ? (
-          <CircularProgress size={24} style={{position: 'absolute'}} />
+          <CircularProgress size={24} />
         ) : (
           <SendIcon />
         )}
