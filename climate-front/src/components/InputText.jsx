@@ -17,25 +17,27 @@ const InputText = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{background: '#20232B', border: '1px solid #B785F5', display:'flex', justifyContent:'center'}}>
+    <form onSubmit={handleSubmit} style={{background: '#20232B',  display:'flex', justifyContent:'center',
+    }}>
       <TextField
         style={{
           marginRight: 1,
-          width: '80%',
           boxSizing: 'border-box',
           background: '#20232B',
+          border: '1px solid #B785F5',
         }}
         value={text}
         onChange={handleChange}
         label="Enter your message..."
         variant="outlined"
+        fullWidth
       />
       <Button style={{
-    minWidth: 'auto',
-    padding: 0,
-  }}
+        minWidth: 'auto',
+        padding: 0,
+      }}
         type="submit"
-        variant="contained"
+        variant="outlined"
         color="primary"
         disableElevation>
         <SendIcon />

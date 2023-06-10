@@ -14,7 +14,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat">
+    <div className="chat" style={{ height: '100%', display:'flex', justifyContent: 'space-between', flexDirection:'column', marginBottom: '32px'}}>
       <Cards messages={messages} />
       <InputText onSubmit={handleMessageSubmit} />
     </div>
