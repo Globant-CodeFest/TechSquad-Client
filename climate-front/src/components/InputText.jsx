@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -8,16 +7,6 @@ import { FormControl, Box } from '@mui/material';
 
 const InputText = ({ onSubmit, loading }) => {
   const [text, setText] = useState('');
-=======
-import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
-import { FormControl, Box } from "@mui/material";
-
-const InputText = ({ onSubmit }) => {
-  const [text, setText] = useState("");
->>>>>>> dd234961417593df86455dfdfdbe3b08675e86b9
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -68,7 +57,7 @@ const InputText = ({ onSubmit }) => {
         disabled={loading}
         disableElevation>
         {loading ? (
-          <CircularProgress size={24} />
+          <CircularProgress size={26} sx={{ position: 'absolute', left: '45%', px:2 }} />
         ) : (
           <SendIcon sx={{ color: "#B785F5", px:2 }}/>
         )}
